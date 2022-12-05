@@ -1,0 +1,255 @@
+{% load static %}
+/* @font-face{
+    font-family: 'PSB';
+    src: local('PSB'),
+    url('PorterSansBlock-Regular.ttf');
+} */
+
+body{
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.korob{
+    background-color: aqua;
+    width: 1500px;
+    height: 200px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+.info-board{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 74px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-color:black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.main-logo{
+    margin-left: 150px;
+}
+
+.h-nav-element{
+    margin-left: 100px;
+    padding-top: 30px;
+}
+
+.h-nav-el-href{
+    text-decoration: none;
+    color: white;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 25px;
+}
+
+.h-nav-el-href:hover{
+    color: darkorchid;
+}
+
+.login-window{
+    background-color: gainsboro;
+    width: 800px;
+    height: 480px;
+    margin-top: 50px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registration-window{
+    background-color: gainsboro;
+    width: 800px;
+    height: 680px;
+    margin-top: 50px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.log-text{
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.user-login{
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+}
+
+.user-login:hover,
+.user-login:focus{
+    outline: 0;
+    outline-offset: 0;
+    border: 1px solid darkorchid;
+}
+
+.enter-password{
+    margin-top: 30px;
+}
+
+.enter-button{
+    margin-top: 30px;
+}
+
+.ent-but{
+    width: 421px;
+    height: 58px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
+    background-color: darkorchid;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.ent-but:hover{
+    background: mediumorchid;
+}
+
+.ent-but:active{
+    background: orchid;
+}
+
+.forgot-password{
+    margin-top: 30px;
+}
+
+.ans-register{
+    margin-top: 30px;
+}
+
+.fgt-pass{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.fgt-pass:hover{
+    color: darkorchid;
+}
+
+.reg-href{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.reg-href:hover{
+    color: darkorchid;
+}
+
+.search-area{
+    width: 1500px;
+    margin-top:40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-label{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.prod-search-env{
+    margin-top: 5px;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.prod-search{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    box-shadow: 0.2em 0.2em 5px rgba(122,122,122,0.5);
+}
+
+.prod-search:hover,
+.prod-search:focus{
+    outline: 0;
+    outline-offset: 0;
+    border: 1px solid darkorchid;
+}
+
+.search-lup{
+    margin-top: 12px;
+    margin-left: -50px;
+    pointer-events: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.search-nav-elm{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.nav-elm-content{
+    margin-left: 30px;
+    text-align: center;
+}
+
+.search-nav-icon{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.mini-logo-icon{
+    cursor: pointer;
+}
+
+.nav-el-text{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-top: 0.0625rem;
+}
+
+.nav-url{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-url:hover{
+    color: darkorchid;
+}
+
+.nav-elm-content:hover .nav-url{
+    color: darkorchid;
+}
+
+.nav-url:hover #profile-icon{
+    background: url("{% static 'headset/images/user_darkorchid.png' %}")
+}

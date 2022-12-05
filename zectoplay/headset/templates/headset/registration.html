@@ -1,0 +1,17 @@
+{% extends 'headset/index.html' %}
+{% load static %}
+
+{% block search-elements %}
+{% endblock search-elements %}
+{% block content %}
+<div class="registration-window" align="center">
+    <p class="log-text" align="center">Регистрация</p>
+    <div class="enter-login"><input class="user-login" type="text" size="46" placeholder="Email"></div>
+    <div class="enter-password"><input class="user-login" type="text" size="46" required placeholder="Имя"></div>
+    <div class="enter-password"><input class="user-login" type="text" size="46" placeholder="Телефон"></div>
+    <div class="enter-password"><input class="user-login" type="password" size="46" required placeholder="Пароль"></div>
+    <div class="enter-password"><input class="user-login" type="password" size="46" required placeholder="Повторите пароль"></div>
+    <div class="enter-button"><button class="ent-but">Зарегистрироваться</button></div>
+    <p class="forgot-password" align="center"><a class="fgt-pass" href="/login">Уже есть аккаунт?</a></p>
+</div>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'headset/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="korob" align="center"><p class="info-board" align="center">Информация</p></div>
+<h1 align="center">{{title}}</h1>
+<h2 align="center">Главная страница сайта</h2>
+<p align="center">Тестовая выгрузка товаров их датабазы:</p>
+<ul>
+    {% for p in products %}
+        {% if p.type == 'Mouse' or p.type == 'Keyboard' or p.type == 'Headphones' %}
+        <li>
+            <h2>{{p.name}}</h2>
+            <p>{{p.type}}</p>
+            <p>{{p.price}}</p>
+            <hr>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endblock content %}
+

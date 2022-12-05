@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <link type="text/css" href="{% static 'headset/css/style.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'headset/images/ZP_main_white_icon.png' %}" type="image/png" sizes="256x256">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body background="{% static 'headset/images/main_background.png' %}">
+    {% block header-elements %}
+    <header>
+        {% block mainmenu %}
+        <div class="main-logo"><a href="{% url 'main_page' %}"><img title="На главную страницу" src="{% static 'headset/images/Main_logo.png' %}" width="400" height="85"></a></div>
+        {% for m in menu %}
+        <div class="h-nav-element"><a class="h-nav-el-href" href="{% url m.url_name %}">{{m.title}}</a></div>
+        {% endfor %}
+        {% endblock mainmenu %}
+    </header>
+    {% endblock header-elements %}
+    {% block search-elements %}
+    <div class="search-area">
+        <div class="search-label" align="center">
+            <div class="mini-logo">
+                <a href="{% url 'main_page' %}">
+                    <img title="На главную страницу" src="{% static 'headset/images/ZP_mini_logo.png' %}" width="200" height="75" class="mini-logo-icon">
+                </a>
+            </div>
+            <div class="prod-search-env">
+                <input class="prod-search" type="text" size="108" placeholder="Название или ID товара">
+                <img src="{% static 'headset/images/search_icon.png' %}" width="32" height="32" class="search-lup">
+                <div class="search-nav-elm">
+                    <div class="nav-elm-content">
+                        <a href="{% url 'login' %}"><img title="Войти в аккаунт или зарегистрироваться" src="{% static 'headset/images/user.png' %}" width="35" height="35" class="search-nav-icon"></a>
+                        <span title="Войти в аккаунт или зарегистрироваться" class="nav-el-text"><a href="{% url 'login' %}" class="nav-url">Профиль</a></span>
+                    </div>
+                    <div class="nav-elm-content">
+                        <a href="{% url 'cart' %}"><img title="Перейти в корзину" src="{% static 'headset/images/shopping_cart.png' %}" width="35" height="35" class="search-nav-icon"></a>
+                        <span title="Перейти в корзину" class="nav-el-text"><a href="{% url 'cart' %}" class="nav-url">Корзина</a></span>
+                    </div>
+                    <div class="nav-elm-content">
+                        <a href="{% url 'favourites' %}"><img title="Перейти в избранное" src="{% static 'headset/images/heart.png' %}" width="35" height="35" class="search-nav-icon"></a>
+                        <span title="Перейти в корзину" class="nav-el-text"><a href="{% url 'favourites' %}" class="nav-url">Избранное</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock search-elements %}
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
