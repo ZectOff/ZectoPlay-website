@@ -10,5 +10,5 @@ urlpatterns = [
     path('discounts/', discounts, name='discounts'), # http://127.0.0.1:8000/registration/
     path('reviews/', reviews, name='reviews'), # http://127.0.0.1:8000/registration/
     path('manufacturers/', manufacturers, name='manufacturers'), # http://127.0.0.1:8000/registration/
-    path('categories/', categories, name='categories'), # http://127.0.0.1:8000/registration/
+    path('categories/', categories, name='categories'), # http://127.0.0.1:8000/categories/
 ]

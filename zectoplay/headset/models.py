@@ -9,6 +9,7 @@ class Headset(models.Model):
     time_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
     time_update = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
     is_placed = models.BooleanField(default=True, verbose_name='Размещено')
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return self.name
@@ -19,3 +20,8 @@ class Headset(models.Model):
         ordering = ['-price', 'name']
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+
+    def __str__(self):
+        return self.name

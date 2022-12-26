@@ -10,9 +10,12 @@ menu = [{'title': 'Категории', 'url_name': 'categories'},
 ]
 
 products = Headset.objects.all()
+ctgrs = Category.objects.all()
 content = {
     'products': products,
     'menu': menu,
+    'menu_selected': 0,
+    'categories': ctgrs,
     'title': 'Zecto Play'
 }
 
@@ -20,7 +23,7 @@ def main_page(request):
     return render(request, 'headset/index.html', context=content)
 
 def categories(request):
-    return HttpResponse('Страница категорий товаров')
+    return render(request, 'headset/categories.html', context=content)
 
 def discounts(request):
     return HttpResponse('Страница скидок')
