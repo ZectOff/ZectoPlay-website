@@ -10,13 +10,15 @@ menu = [{'title': 'Категории', 'url_name': 'categories'},
 ]
 
 products = Headset.objects.all()
+prd_count = len(products)
 ctgrs = Category.objects.all()
 content = {
     'products': products,
     'menu': menu,
     'menu_selected': 0,
     'categories': ctgrs,
-    'title': 'Zecto Play'
+    'title': 'Zecto Play',
+    'prd_count': prd_count
 }
 
 def main_page(request):

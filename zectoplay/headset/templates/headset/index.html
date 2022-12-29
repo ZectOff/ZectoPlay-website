@@ -2,22 +2,37 @@
 {% load static %}
 
 {% block content %}
-<div class="korob" align="center"><p class="info-board" align="center">Информация</p></div>
-<h1 align="center">{{title}}</h1>
-<h2 align="center">Главная страница сайта</h2>
-<p align="center">Тестовая выгрузка товаров их датабазы:</p>
-<ul>
-    {% for p in products %}
-        {% if p.type == 'Mouse' or p.type == 'Keyboard' or p.type == 'Headphones' %}
-        <li>
-            <h2>{{p.name}}</h2>
-            <p>{{p.type}}</p>
-            <p>{{p.price}}</p>
-            <p>{{p.category_id}}</p>
-            <hr>
-        </li>
-        {% endif %}
+<div class="korob" align="center">
+    <img class="kor-img" src="{% static 'headset/images/info_label.jpg' %}" width="1500" height="200">
+    <div class="info-board">Информация</div>
+</div>
+<h2 class="hits-text">Хиты продаж  <span class="hits-num">[123]</span> Всего товаров в бд: <span class="hits-num">[{{prd_count}}]</span></h2>
+<div class="main-hits-box">
+    {% for prod in products %}
+    {% if prod.id <= 10 %}
+    <div class="mhb-solid-elm">
+        <a class="mhb-img-link" href="{% url 'main_page' %}">
+        <div class="mhb-product">
+            {% if prod.photo %}
+                {% if prod.type == 'Mouse' %}
+                <img src="{{prod.photo.url}}" width="134" height="200">
+                {% elif prod.type == 'Keyboard' %}
+                <img src="{{prod.photo.url}}" width="250" height="168">
+                {% elif prod.type == 'Headphones' %}
+                <img src="{{prod.photo.url}}" width="230" height="250">
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="mhb-info-and-cart-button">
+            <div class="mhb-price">{{prod.price}} ₽</div>
+            <div class="mhb-prd-name"><a class="mhb-prd-name-href" href="{% url 'main_page' %}">{{prod.name}}</a></div>
+            <div class="mhb-cart-button">
+                <button class="mhb-butt" type="button">В корзину</button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
     {% endfor %}
-</ul>
+</div>
 {% endblock content %}
 

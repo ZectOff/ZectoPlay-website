@@ -1,8 +1,48 @@
-{% extends 'headset/base.html' %}
+{% extends 'headset/index.html' %}
 {% load static %}
 
-{% block search-elements %}
-{% endblock search-elements %}
 {% block content %}
 <h1 align="center">Категории товаров.</h1>
+<div class="ctgr-box">
+    {% for cat in categories %}
+    <div class="ctgr-element">
+        {% if cat.name == "Mouses" %}
+        <a href="{% url 'main_page' %}" class="ctgr-link">
+            <div class="ctgr-img-txt">
+                <img class="ctgr-img" src="{% static 'headset/images/cat_mouses.jpg' %}" width="248" height="165" border="1">
+                <p class="ctgr-text"><b>Игровые мышки</b></p>
+            </div>
+        </a>
+        {% elif cat.name == "Keyboards" %}
+        <a href="{% url 'main_page' %}" class="ctgr-link">
+            <div class="ctgr-img-txt">
+                <img class="ctgr-img" src="{% static 'headset/images/cat_keyboard.jpg' %}" width="248" height="165" border="1">
+                <p class="ctgr-text"><b>Игровые клавиатуры</b></p>
+            </div>
+        </a>
+        {% elif cat.name == "Headgears" %}
+        <a href="{% url 'main_page' %}" class="ctgr-link">
+            <div class="ctgr-img-txt">
+                <img class="ctgr-img" src="{% static 'headset/images/cat_headgears.jpg' %}" width="248" height="165" border="1">
+                <p class="ctgr-text"><b>Игровые наушники</b></p>
+            </div>
+        </a>
+        {% elif cat.name == "Controllers" %}
+        <a href="{% url 'main_page' %}" class="ctgr-link">
+            <div class="ctgr-img-txt">
+                <img class="ctgr-img" src="{% static 'headset/images/cat_gamepads.jpg' %}" width="248" height="165" border="1">
+                <p class="ctgr-text"><b>Геймпады</b></p>
+            </div>
+        </a>
+        {% elif cat.name == "Carpets" %}
+        <a href="{% url 'main_page' %}" class="ctgr-link">
+            <div class="ctgr-img-txt">
+                <img class="ctgr-img" src="{% static 'headset/images/cat_carpets.jpg' %}" width="248" height="165" border="1">
+                <p class="ctgr-text"><b>Коврики для мыши</b></p>
+            </div>
+        </a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
 {% endblock content %}

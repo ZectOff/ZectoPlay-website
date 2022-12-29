@@ -50,5 +50,15 @@
     {% endblock search-elements %}
     {% block content %}
     {% endblock content %}
+    {% block footer-elements %}
+    <footer class="footer-elements-box">
+        {% block f-menu %}
+        <div class="main-logo"><a href="{% url 'main_page' %}"><img title="На главную страницу" src="{% static 'headset/images/Main_logo.png' %}" width="400" height="85"></a></div>
+        {% for m in menu %}
+        <div class="h-nav-element"><a class="h-nav-el-href" href="{% url m.url_name %}">{{m.title}}</a></div>
+        {% endfor %}
+        {% endblock f-menu %}
+    </footer>
+    {% endblock footer-elements %}
 </body>
 </html>
