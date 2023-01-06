@@ -6,9 +6,16 @@
 {% block content %}
 <div class="login-window" align="center">
     <p class="log-text" align="center">Авторизация</p>
-    <div class="enter-login"><input class="user-login" type="text" size="46" placeholder="Введите имя или почту"></div>
-    <div class="enter-password"><input class="user-login" type="password" size="46" placeholder="Введите пароль"></div>
-    <div class="enter-button"><button class="ent-but" type="button">Войти</button></div>
+        <form method = "POST" action="">
+            {% csrf_token %}
+            <div class="enter-login"><label for = "username">username</label>
+                {{form.username}}
+            </div>
+            <div class="enter-password"><label for = "enter-password">Password</label>
+                {{form.password}}
+            </div>
+            <div class="enter-button"><button class="ent-but" type="submit">Войти</button></div>
+        </form>
     <p class="forgot-password" align="center"><a class="fgt-pass" href="#">Забыли пароль?</a></p>
     <p class="ans-register" align="center"><a class="reg-href" href="/registration">Зарегистрироваться</a></p>
 </div>
