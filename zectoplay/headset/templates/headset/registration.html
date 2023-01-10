@@ -1,5 +1,6 @@
-{% extends 'headset/index.html' %}
+{% extends 'headset/base.html' %}
 {% load static %}
+{% load hs_tags %}
 
 {% block search-elements %}
 {% endblock search-elements %}
@@ -8,13 +9,13 @@
     <p class="log-text" align="center">Регистрация</p>
         <form method = "POST" action="">
             {%  csrf_token %}
-            <div class="enter-password"><label for = "username">username</label>
+            <div class="enter-password">
                 {{form.username}}
             </div>
-            <div class="enter-password"><label for = "enter-password">Password</label>
+            <div class="enter-password">
                 {{form.password1}}
             </div>
-            <div class="enter-password"><label for = "enter-password">Confirm password</label>
+            <div class="enter-password">
                 {{form.password2}}
             </div>
             <div class="enter-button"><button class="ent-but">Зарегистрироваться</button></div>

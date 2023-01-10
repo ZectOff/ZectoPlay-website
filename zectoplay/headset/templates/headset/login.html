@@ -1,6 +1,9 @@
-{% extends 'headset/index.html' %}
+{% extends 'headset/base.html' %}
 {% load static %}
+{% load hs_tags %}
 
+{% g_menu as menu %}
+{% g_content as title%}
 {% block search-elements %}
 {% endblock search-elements %}
 {% block content %}
@@ -8,10 +11,10 @@
     <p class="log-text" align="center">Авторизация</p>
         <form method = "POST" action="">
             {% csrf_token %}
-            <div class="enter-login"><label for = "username">username</label>
+            <div class="enter-login">
                 {{form.username}}
             </div>
-            <div class="enter-password"><label for = "enter-password">Password</label>
+            <div class="enter-password">
                 {{form.password}}
             </div>
             <div class="enter-button"><button class="ent-but" type="submit">Войти</button></div>

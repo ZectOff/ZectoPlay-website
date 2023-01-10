@@ -211,7 +211,7 @@ footer{
 .registration-window{
     background-color: gainsboro;
     width: 800px;
-    height: 680px;
+    height: 530px;
     margin-top: 50px;
     border-radius: 20px;
     border: 1px solid black;
@@ -225,7 +225,7 @@ footer{
     font-size: 35px;
 }
 
-.user-login{
+.user-input-bar{
     padding-top: 18px;
     padding-bottom: 18px;
     padding-left: 15px;
@@ -235,22 +235,13 @@ footer{
     font-size: 14px;
 }
 
-.user-login:hover,
-.user-login:focus{
+.user-input-bar:hover,
+.user-input-bar:focus{
     outline: 0;
     outline-offset: 0;
     border: 1px solid darkorchid;
 }
-input{
-    display: block;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 15px;
-    border-radius: 5px;
-    border: 1px solid black;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 14px;
-}
+
 .enter-password{
     margin-top: 30px;
 }
