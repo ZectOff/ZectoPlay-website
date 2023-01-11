@@ -12,6 +12,7 @@ urlpatterns = [
     path('reviews/', reviews, name='reviews'), # http://127.0.0.1:8000/registration/
     path('manufacturers/', manufacturers, name='manufacturers'), # http://127.0.0.1:8000/registration/
     path('categories/', categories, name='categories'), # http://127.0.0.1:8000/categories/
+    path('category/<slug:category_name>', show_category, name='show_category'), # http://127.0.0.1:8000/category/<category_name>/
     path('profile/',user_profile,name='user_profile'),
     path('logout/',user_logout,name='logout')
 ]

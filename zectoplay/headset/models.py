@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.urls import reverse
 
 
 class Headset(models.Model):
@@ -26,3 +26,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        lowered_name = (str(self.name)).lower()
+        return reverse('show_category', kwargs={'category_name': lowered_name})

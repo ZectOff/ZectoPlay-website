@@ -26,6 +26,28 @@ content = {
 def main_page(request):
     return render(request, 'headset/index.html', context=content)
 
+def show_category(request, category_name):
+    content = {
+        'menu': menu,
+        'menu_selected': 0,
+        'categories': ctgrs.filter(name=category_name),
+        'title': 'Zecto Play',
+        'prd_count': prd_count,
+        'cat_name': category_name
+    }
+    if category_name == 'mouses':
+        filtered_products = products.filter(category_id=1)
+        content['products'] = filtered_products
+    if category_name == 'keyboards':
+        filtered_products = products.filter(category_id=2)
+        content['products'] = filtered_products
+    if category_name == 'headgears':
+        filtered_products = products.filter(category_id=3)
+        content['products'] = filtered_products
+
+    return render(request, f'headset/category.html', context=content)
+    # return HttpResponse(f'Выбрана категория: {category_name}')
+
 def categories(request):
     return render(request, 'headset/categories.html', context=content)
 

@@ -1,0 +1,45 @@
+{% extends 'headset/index.html' %}
+{% load static %}
+
+{% block content %}
+<div>
+    {% if cat_name == 'mouses' %}
+    <h2 class="hits-text">Игровые мышки  <span class="hits-num">[15]</span> Всего товаров на складе: <span class="hits-num">[{{prd_count}}]</span></h2>
+    {% elif cat_name == 'keyboards' %}
+    <h2 class="hits-text">Игровые клавиатуры  <span class="hits-num">[23]</span> Всего товаров на складе: <span class="hits-num">[{{prd_count}}]</span></h2>
+    {% elif cat_name == 'headgears' %}
+    <h2 class="hits-text">Игровые наушники  <span class="hits-num">[31]</span> Всего товаров на складе: <span class="hits-num">[{{prd_count}}]</span></h2>
+    {% elif cat_name == 'controllers' %}
+    <h2 class="hits-text">Геймпады  <span class="hits-num">[12]</span> Всего товаров на складе: <span class="hits-num">[{{prd_count}}]</span></h2>
+    {% elif cat_name == 'carpets' %}
+    <h2 class="hits-text">Игровые коврики  <span class="hits-num">[42]</span> Всего товаров на складе: <span class="hits-num">[{{prd_count}}]</span></h2>
+    {% endif %}
+</div>
+<div class="main-hits-box">
+    {% for prod in products %}
+    {% if prod.is_placed == 1 and prod.id <= 10 %}
+    <div class="mhb-solid-elm">
+        <a class="mhb-img-link" href="{% url 'main_page' %}">
+        <div class="mhb-product">
+            {% if prod.photo %}
+                {% if prod.type == 'Mouse' %}
+                <img src="{{prod.photo.url}}" width="134" height="200">
+                {% elif prod.type == 'Keyboard' %}
+                <img src="{{prod.photo.url}}" width="250" height="168">
+                {% elif prod.type == 'Headphones' %}
+                <img src="{{prod.photo.url}}" width="230" height="250">
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="mhb-info-and-cart-button">
+            <div class="mhb-price">{{prod.price}} ₽</div>
+            <div class="mhb-prd-name"><a class="mhb-prd-name-href" href="{% url 'main_page' %}">{{prod.name}}</a></div>
+            <div class="mhb-cart-button">
+                <button class="mhb-butt" type="button">В корзину</button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock content %}
