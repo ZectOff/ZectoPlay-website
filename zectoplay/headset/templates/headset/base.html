@@ -34,8 +34,13 @@
                 <img src="{% static 'headset/images/search_icon.png' %}" width="32" height="32" class="search-lup">
                 <div class="search-nav-elm">
                     <div class="nav-elm-content">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'user_profile' %}"><img title="Профиль" src="{% static 'headset/images/user.png' %}" width="35" height="35" class="search-nav-icon"></a>
+                        <span title="Войти в аккаунт или зарегистрироваться" class="nav-el-text"><a href="{% url 'user_profile' %}" class="nav-url">{{user.username}}</a></span>
+                        {% else %}
                         <a href="{% url 'login' %}"><img title="Войти в аккаунт или зарегистрироваться" src="{% static 'headset/images/user.png' %}" width="35" height="35" class="search-nav-icon"></a>
                         <span title="Войти в аккаунт или зарегистрироваться" class="nav-el-text"><a href="{% url 'login' %}" class="nav-url">Профиль</a></span>
+                        {% endif %}
                     </div>
                     <div class="nav-elm-content">
                         <a href="{% url 'cart' %}"><img title="Перейти в корзину" src="{% static 'headset/images/shopping_cart.png' %}" width="35" height="35" class="search-nav-icon"></a>

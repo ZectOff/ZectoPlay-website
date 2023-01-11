@@ -21,7 +21,7 @@ from zectoplay import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('headset.urls')),
+    path('', include('headset.urls'))
 ]
 
 if settings.DEBUG:
